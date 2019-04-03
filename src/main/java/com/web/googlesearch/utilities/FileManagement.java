@@ -12,6 +12,8 @@ public class FileManagement extends PageObject {
 
 	static PrintWriter writer;
 	static FileOutputStream fos;
+	
+	//Path for the Error Log
 	static File log = new File("./Log/Errors.txt");
 
 	public FileManagement(WebDriver driver) {
@@ -20,12 +22,14 @@ public class FileManagement extends PageObject {
 	}
 
 
+	//Function to Write the Exceptions in a File
 	public static void logError(Exception e)
 	{
 		writeToFile("ERROR : " + e.getMessage());
 	}
 
 
+	//Function to Write the contents in a Specific File
 	public static void writeToFile(String msg)
 	{
 		try

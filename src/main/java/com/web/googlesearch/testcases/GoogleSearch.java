@@ -1,7 +1,6 @@
 package com.web.googlesearch.testcases;
 
 import org.junit.Test;
-
 import com.web.googlesearch.pages.DriverManagement;
 import com.web.googlesearch.pages.GoogleHome;
 
@@ -10,13 +9,16 @@ public class GoogleSearch extends DriverManagement {
 	@Test
 	public void searchTextInGoogle(){
 		
-		driver.get("http://www.google.com");
-		
-		GoogleHome googleHome = new GoogleHome(driver);
+		GoogleHome google = new GoogleHome(driver);
 
-		googleHome.typeSearchKeyWord("SQL");
-		googleHome.clickSearchButton();
-		googleHome.clickSecondSearchResultLink();
+		//Enter the KeyWord to search
+		google.typeSearchKeyWord("SQL");
+		
+		//Perform SearchOperation
+		google.performSearch();
+		
+		//Click the Second Result from the search
+		google.clickSecondSearchResultLink();
 
 	}
 }

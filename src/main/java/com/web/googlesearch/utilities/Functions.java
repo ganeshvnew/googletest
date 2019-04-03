@@ -28,6 +28,8 @@ public class Functions extends PageObject {
 
 		catch(Exception e) {
 			System.out.println(e);
+			
+			//Log the Exception in a File
 			writeError(e);
 			
 		}
@@ -42,6 +44,8 @@ public class Functions extends PageObject {
 
 		catch(Exception e) {
 			System.out.println(e);
+			
+			//Log the Exception in a File
 			writeError(e);
 
 		}
@@ -56,6 +60,8 @@ public class Functions extends PageObject {
 
 		catch(Exception e) {
 			System.out.println(e);
+			
+			//Log the Exception in a File
 			writeError(e);
 
 		}
@@ -72,6 +78,8 @@ public class Functions extends PageObject {
 
 		catch(Exception e) {
 			System.out.println(e);
+			
+			//Log the Exception in a File
 			writeError(e);
 
 		}

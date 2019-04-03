@@ -15,6 +15,7 @@ public class DriverManagement {
 	public static void setUp(){
 		driver = new HtmlUnitDriver();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		driver.get("http://www.google.com");
 	}
 
 	@After
