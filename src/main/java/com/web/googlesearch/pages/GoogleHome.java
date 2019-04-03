@@ -16,12 +16,8 @@ public class GoogleHome  extends PageObject {
 	@FindBy(name="q")
 	private WebElement txtSearch;
 
-	@FindBy(linkText="Google Search")
-	private WebElement btnSearch;
-
 	@FindBy(xpath="//h3[contains(.,'SQL Tutorial - W3Schools')]")
 	private WebElement linkSearchResult;
-
 
 
 	public GoogleHome(WebDriver driver) {

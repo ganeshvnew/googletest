@@ -7,18 +7,15 @@ import com.web.googlesearch.pages.GoogleHome;
 
 public class GoogleSearch extends DriverManagement {
 
-
 	@Test
-	public void signUp(){
+	public void searchTextInGoogle(){
 		driver.get("http://www.google.com");
 
 		GoogleHome googleHome = new GoogleHome(driver);
 
-
 		googleHome.typeSearchKeyWord("SQL");
 		googleHome.clickSearchButton();
 		googleHome.clickSearchResult();
-
 
 	}
 }
