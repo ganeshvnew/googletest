@@ -1,24 +1,23 @@
 package com.web.googlesearch.pages;
 
+import java.util.List;
+import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import com.web.googlesearch.utilities.Functions;
 
 public class GoogleHome  extends PageObject {	
 
 	WebDriverWait wait=new WebDriverWait(driver, 20);
 	Functions function = new Functions(driver);
-
-	@FindBy(name="q")
+	int i=0;
+	
+	@FindBy(name="q") 
 	private WebElement txtSearch;
-
-	@FindBy(xpath="//h3[contains(.,'SQL Tutorial - W3Schools')]")
-	private WebElement linkSearchResult;
-
+	
 
 	public GoogleHome(WebDriver driver) {
 		super(driver);
@@ -36,13 +35,19 @@ public class GoogleHome  extends PageObject {
 		function.sendSpecialKeys(txtSearch, Keys.RETURN);
 
 	}
+	
+	public void clickSecondSearchResultLink() {		
+		List <WebElement> my_list = driver.findElements(By.xpath("//div[@class=\"g\"]//h3/a[not(ancestor::div[@class=\"_OKe\"])]")); 
+		System.out.println("List of Search Results");
+		
+		for (WebElement item:my_list) { 
+			System.out.println("Link : " + ++i +": " + item.getAttribute("href")); 
+			} 
+		
+		function.clickElement(my_list.get(2));
+		System.out.println("Clicking 2nd Result : Completed");
 
-
-	public void clickSearchResult(){			
-		function.clickElement(linkSearchResult);
-
-	}			
-
+	}
 
 }
 

@@ -9,13 +9,14 @@ public class GoogleSearch extends DriverManagement {
 
 	@Test
 	public void searchTextInGoogle(){
+		
 		driver.get("http://www.google.com");
-
+		
 		GoogleHome googleHome = new GoogleHome(driver);
 
 		googleHome.typeSearchKeyWord("SQL");
 		googleHome.clickSearchButton();
-		googleHome.clickSearchResult();
+		googleHome.clickSecondSearchResultLink();
 
 	}
 }
